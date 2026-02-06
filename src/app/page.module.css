@@ -1,0 +1,549 @@
+.page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 4vw, 4rem) clamp(1.5rem, 4vw, 3rem) 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+}
+
+.hero {
+  background: linear-gradient(145deg, rgba(122, 92, 241, 0.18), rgba(36, 43, 88, 0.55));
+  border: 1px solid rgba(122, 92, 241, 0.22);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 3vw, 2.75rem);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 20% 15%,
+    rgba(159, 131, 255, 0.34),
+    transparent 55%
+  );
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.heroTitle {
+  font-size: clamp(2.4rem, 4vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+}
+
+.heroSubtitle {
+  color: var(--text-secondary);
+  max-width: 620px;
+  line-height: 1.5;
+  font-size: 1.05rem;
+}
+
+.phaseBar {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.phaseBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(122, 92, 241, 0.16);
+  border: 1px solid rgba(140, 118, 255, 0.35);
+  color: var(--accent-strong);
+}
+
+.statsRow {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.statBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(122, 92, 241, 0.18);
+  background: rgba(12, 18, 44, 0.65);
+}
+
+.statLabel {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.statValue {
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 2fr minmax(280px, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 2vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 40px 80px rgba(7, 10, 24, 0.4);
+  backdrop-filter: blur(18px);
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.panelTitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.panelDescription {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.lobbyForm {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.8rem;
+}
+
+.lobbyForm input {
+  min-width: 0;
+}
+
+.lobbyControls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.85rem;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.counter label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.counter select {
+  background: rgba(21, 28, 60, 0.88);
+}
+
+.playerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.playerCard {
+  background: var(--surface-strong);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(129, 140, 196, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.playerCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(129, 99, 255, 0.08), transparent 65%);
+  pointer-events: none;
+}
+
+.playerName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.roleBadge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.roleCrewmate {
+  color: #64ffd3;
+  border-color: rgba(100, 255, 211, 0.32);
+  background: rgba(23, 180, 143, 0.15);
+}
+
+.roleImpostor {
+  color: #ff8ca1;
+  border-color: rgba(255, 140, 161, 0.32);
+  background: rgba(191, 56, 88, 0.18);
+}
+
+.roleAnalyst {
+  color: #8dc6ff;
+  border-color: rgba(141, 198, 255, 0.32);
+  background: rgba(58, 124, 217, 0.2);
+}
+
+.status {
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.statusAlive {
+  color: var(--success);
+}
+
+.statusEliminated {
+  color: var(--danger);
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.taskItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(129, 140, 196, 0.16);
+  background: rgba(15, 21, 50, 0.6);
+}
+
+.taskMeta {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.taskAction {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.1rem;
+}
+
+.taskName {
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.taskNameCompleted {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.taskName.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.cardControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.progressStack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.progressBar {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(122, 92, 241, 0.08);
+  overflow: hidden;
+}
+
+.progressValue {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #64ffd3, #7a5cf1);
+  transition: width 0.25s ease;
+}
+
+.logList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.35rem;
+}
+
+.logEntry {
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.85rem;
+  background: rgba(12, 18, 44, 0.75);
+  border: 1px solid rgba(122, 92, 241, 0.12);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.logEntry strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.promptCard {
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(122, 92, 241, 0.2);
+  padding: 1rem;
+  background: rgba(116, 99, 236, 0.12);
+  color: var(--accent-strong);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.promptCard button {
+  align-self: flex-start;
+}
+
+.revealCard {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px dashed rgba(129, 140, 196, 0.25);
+  background: rgba(8, 12, 32, 0.75);
+  gap: 1.25rem;
+}
+
+.revealHeadline {
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+}
+
+.revealRole {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.revealHint {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.meetingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.85rem;
+}
+
+.suspectButton {
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(21, 28, 60, 0.85);
+  border: 1px solid rgba(129, 140, 196, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border 0.16s ease, transform 0.16s ease;
+}
+
+.suspectButtonSelected {
+  border-color: rgba(255, 107, 107, 0.55);
+  box-shadow: 0 8px 26px rgba(255, 107, 107, 0.25);
+  transform: translateY(-2px);
+}
+
+.suspectButton.selected {
+  border-color: rgba(255, 107, 107, 0.55);
+  box-shadow: 0 8px 26px rgba(255, 107, 107, 0.25);
+  transform: translateY(-2px);
+}
+
+.meetingActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.outcomeCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  border: 1px solid rgba(129, 140, 196, 0.22);
+  background: linear-gradient(145deg, rgba(100, 255, 211, 0.12), rgba(36, 43, 88, 0.6));
+  box-shadow: var(--shadow-soft);
+}
+
+.outcomeWinner {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.outcomeReason {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.outcomeRoster {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.error {
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+  background: rgba(255, 107, 107, 0.12);
+  border: 1px solid rgba(255, 107, 107, 0.28);
+  color: #ff9aa5;
+  font-size: 0.92rem;
+}
+
+.emptyState {
+  border-radius: var(--radius-md);
+  padding: 1.35rem;
+  border: 1px dashed rgba(129, 140, 196, 0.24);
+  color: var(--text-secondary);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.badgeToneDanger {
+  background: rgba(255, 107, 107, 0.16);
+  border-color: rgba(255, 107, 107, 0.38);
+  color: #ff9aa5;
+}
+
+.badgeToneSuccess {
+  background: rgba(46, 204, 113, 0.16);
+  border-color: rgba(46, 204, 113, 0.38);
+  color: #7effb5;
+}
+
+.badgeToneWarning {
+  background: rgba(255, 192, 72, 0.16);
+  border-color: rgba(255, 192, 72, 0.4);
+  color: #ffd27d;
+}
+
+.utilityRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.utilityRow span {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.muted {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 2rem 1.25rem 3.5rem;
+    gap: 2rem;
+  }
+
+  .hero {
+    padding: 1.5rem;
+  }
+
+  .statsRow {
+    gap: 0.9rem;
+  }
+
+  .panel {
+    padding: 1.35rem;
+  }
+
+  .lobbyForm {
+    grid-template-columns: 1fr;
+  }
+
+  .panelHeader {
+    align-items: flex-start;
+  }
+
+  .playerGrid {
+    grid-template-columns: 1fr;
+  }
+}
